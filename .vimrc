@@ -37,7 +37,7 @@ set cursorline
 set foldenable
 set foldmethod=syntax
 set nofoldenable
-set wildignore+=.DS_Store,node_modules,*/tmp/*,*.so,*.swp,coverage
+set wildignore+=.DS_Store,node_modules,*/tmp/*,*.so,*.swp,coverage,*/target/*
 set wildmenu
 set wildmode=list:longest
 set shell=/usr/bin/zsh
@@ -55,6 +55,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-rails'
+Plugin 'gabebw/vim-spec-runner'
 Plugin 'tpope/vim-dispatch'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'kien/ctrlp.vim'
@@ -141,6 +142,15 @@ nnoremap <S-Tab> :tabprevious<CR>
 set splitbelow
 set splitright
 
+" Use <Leader>t to run the current spec file.
+map <Leader>t <Plug>RunCurrentSpecFile
+
+" Use <Leader>u to run the current line in a spec.
+map <Leader>u <Plug>RunFocusedSpec
+
+" Use <Leader>v to explicitly run the most recent spec.
+map <Leader>v <Plug>RunMostRecentSpec
+
 " vim-move
 let g:move_map_keys = 0
 vmap <C-j> <Plug>MoveBlockDown
@@ -150,3 +160,27 @@ nmap <C-k> <Plug>MoveLineUp
 
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+
+" dont use arrow keys :)
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
