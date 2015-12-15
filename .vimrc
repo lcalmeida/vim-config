@@ -56,11 +56,11 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'gabebw/vim-spec-runner'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-dispatch'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
@@ -106,6 +106,8 @@ autocmd FileType html,markdown setl omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css setl omnifunc=csscomplete#CompleteCSS
 autocmd FileType ruby setl omnifunc=rubycomplete#Complete
 autocmd FileType xml setl omnifunc=xmlcomplete#CompleteTags
+
+let g:vimrubocop_config = './.rubocop.yml'
 
 " Use powerline fonts on airline
 let g:airline_powerline_fonts = 1
