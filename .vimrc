@@ -3,6 +3,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vim-snippets
 set laststatus=2
 set background=dark
 set showmode
@@ -96,6 +97,8 @@ Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rbenv'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'matze/vim-move'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -159,6 +162,10 @@ vmap <C-j> <Plug>MoveBlockDown
 vmap <C-k> <Plug>MoveBlockUp
 nmap <C-j> <Plug>MoveLineDown
 nmap <C-k> <Plug>MoveLineUp
+
+let g:UltiSnipsExpandTrigger="<c-Space>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
