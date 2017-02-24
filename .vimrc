@@ -99,6 +99,7 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'matze/vim-move'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'Raimondi/delimitMate'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
